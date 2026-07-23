@@ -4,36 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 완료 - 환영합니다!</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+            background: linear-gradient(160deg, #f7f5fb 0%, #ece6fb 50%, #e4d9f7 100%);
+            color: #3f3757;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            text-align: center;
+            padding: 36px 24px 8px;
+        }
+
+        .profile-header__eyebrow {
+            display: inline-block;
+            padding: 4px 14px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #8a6fd6;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(138, 111, 214, 0.15);
+        }
+
+        .profile-header__title {
+            margin: 0 0 14px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #4b3f72;
+        }
+
+        .profile-header__intro {
+            margin: 0 auto;
+            max-width: 520px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6d6288;
+        }
+
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 28px 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ece5fa;
+            border-radius: 18px;
+            padding: 28px 30px;
+            box-shadow: 0 10px 30px rgba(150, 120, 220, 0.08);
+        }
+
+        .card__title {
+            margin: 0 0 18px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #5b4d8a;
+        }
+
+        .card__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .card__list--notice li {
+            position: relative;
+            padding: 12px 16px 12px 40px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            background: #f9f6ff;
+            color: #4b3f72;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .card__list--notice li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card__list--notice li::before {
+            content: "✓";
+            position: absolute;
+            left: 14px;
+            top: 12px;
+            color: #8a6fd6;
+            font-weight: 700;
+        }
+
+        .card__list--links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card__list--links a {
+            display: block;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: #f9f6ff;
+            color: #4b3f72;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+
+        .card__list--links a:hover {
+            background: #ece5fa;
+            transform: translateX(4px);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d8c9f5, transparent);
+        }
+
+        .profile-footer {
+            text-align: center;
+            padding: 12px 0 32px;
+            font-size: 13px;
+            color: #a496c7;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page">
 
-    <h1>🎉 회원가입을 진심으로 축하합니다!</h1>
-    <p>SKALA-FRONT 회원이 되신 것을 환영합니다.</p>
-    <hr>
+        <header class="profile-header">
+            <p class="profile-header__eyebrow">SKALA-FRONT</p>
+            <h1 class="profile-header__title">🎉 회원가입을 진심으로 축하합니다!</h1>
+            <p class="profile-header__intro">
+                SKALA-FRONT 회원이 되신 것을 환영합니다.
+            </p>
+        </header>
 
-    <h3>안내 사항</h3>
-    <ul>
-        <li>입력하신 이메일 주소로 가입 확인 메일이 발송되었습니다.</li>
-        <li>보안을 위해 첫 로그인 후 비밀번호를 다시 한번 확인해 주세요.</li>
-        <li>작성하신 프로필 정보는 마이페이지에서 언제든지 수정이 가능합니다.</li>
-    </ul>
+        <main class="profile-content">
 
-    <br>
+            <section class="card card--notice">
+                <h2 class="card__title">📢 안내 사항</h2>
+                <ul class="card__list card__list--notice">
+                    <li>입력하신 이메일 주소로 가입 확인 메일이 발송되었습니다.</li>
+                    <li>보안을 위해 첫 로그인 후 비밀번호를 다시 한번 확인해 주세요.</li>
+                    <li>작성하신 프로필 정보는 마이페이지에서 언제든지 수정이 가능합니다.</li>
+                </ul>
+            </section>
 
-    <h3>이동하기</h3>
-    <p>아래 링크를 클릭하면 이전에 작성한 다른 페이지로 이동할 수 있습니다.</p>
-    
-    <ul>
-        <li><a href="myProfile.html">👤 나의 프로필 보기</a></li>
-        <li><a href="myClass.html">📅 나의 수업 시간표 보기</a></li>
-        <li><a href="myHoliday.html">🏖️ 나의 휴일 계획 보기</a></li>
-    </ul>
+            <div class="section-divider" role="separator"></div>
 
-    <br>
-    <hr>
-    <p><small>© 2026 SKALA-FRONT 프로젝트. All rights reserved.</small></p>
+            <section class="card card--links">
+                <h2 class="card__title">🚀 이동하기</h2>
+                <p style="margin: 0 0 16px; font-size: 14px; color: #6d6288;">아래 링크를 클릭하면 이전에 작성한 다른 페이지로 이동할 수 있습니다.</p>
+                <ul class="card__list card__list--links">
+                    <li><a href="myProfile.html">👤 나의 프로필 보기</a></li>
+                    <li><a href="myClass.html">📅 나의 수업 시간표 보기</a></li>
+                    <li><a href="myHoliday.html">🏖️ 나의 휴일 계획 보기</a></li>
+                </ul>
+            </section>
+
+        </main>
+
+        <footer class="profile-footer">
+            <p>© 2026 SKALA-FRONT 프로젝트. All rights reserved.</p>
+        </footer>
 
     </div>
 </body>
