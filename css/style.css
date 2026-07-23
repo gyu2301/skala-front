@@ -2,14 +2,14 @@
    [미션 1] 구글 폰트 불러오기
    ========================================================================== */
 /* 구글 폰트 서버에서 Noto Sans KR(400:기본, 700:두껍게) 글꼴을 로드합니다. */
-@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@400;700&display=swap');
 
 /* 전체 페이지 글꼴 및 배경 기본 설정 */
 body {
-    font-family: 'Dongle', sans-serif; /* 구글 폰트를 적용하고, 실패 시 기본 고딕체 사용 */
-    line-height: 1.2;                  /* 줄간격을 넓혀 가독성 확보 */
-    color: #333333;                  /* 너무 완전한 검은색(#000)보다 눈이 편한 짙은 회색 */
-    background-color: #fcfcfc;       /* 완전 흰색보다 부드러운 아이보리빛 미색 */
+    font-family: 'Sunflower', 고딕체; /* 구글 폰트를 적용하고, 실패 시 기본 고딕체 사용 */
+    line-height: 1.7;                  /* 줄간격을 넓혀 가독성 확보 */
+    color: #3c3c3c;                  /* 너무 완전한 검은색(#000)보다 눈이 편한 짙은 회색 */
+    background-color: #eeeeee;       /* 완전 흰색보다 부드러운 아이보리빛 미색 */
     font-size: 30px;
 }
 
