@@ -3,87 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 개인 포털 메인</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Welcome SKALA</title>
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #2e1065 0%, #6d28d9 45%, #c084fc 100%);
+            color: #fdf4ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .container {
+            width: min(860px, 100%);
+            background: rgba(255, 255, 255, 0.16);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(70, 20, 120, 0.35);
+            padding: 36px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.22);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            color: #fff7ff;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(1.9rem, 4vw, 2.8rem);
+        }
+
+        .subtitle {
+            margin: 0 0 24px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #f5e8ff;
+        }
+
+        .link-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .link-card {
+            display: block;
+            padding: 20px;
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(46, 16, 101, 0.28);
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .link-card h3 {
+            margin: 0 0 6px;
+            font-size: 1.08rem;
+        }
+
+        .link-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #f3e8ff;
+            line-height: 1.5;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 0.92rem;
+            color: #e9d5ff;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .link-list {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>강병호의 유니버스 🚀</h1>
-            <p>저의 프로필, 학습 내용, 여행 기록을 모아둔 Hub 페이지입니다.</p>
-        </header>
+        <div class="badge">📌 과제 1 [Project 구성과 index.html 생성] </div>
+        <h1>환영 인사 (Warm Welcome)</h1>
+        <p class="subtitle">스칼라에 오신 것을 환영합니다. 
+             <br>안녕하세요 SKALA 교육생 최규원입니다. <br>이 페이지는 제 GitHub와 포트폴리오를 한눈에 볼 수 있도록 정리한 소개 페이지입니다. </p>
 
-        <nav>
-            <h3>📂 바로가기 메뉴</h3>
-            <ul>
-                <li><a href="myProfile.html">소개 (Profile)</a></li>
-                <li><a href="myClass.html">수업 시간표 (Class)</a></li>
-                <li><a href="myHoliday.html">휴일 계획 (Holiday)</a></li>
-                <li><a href="myTrip.html">여행 앨범 (Album)</a></li>
-                <li><a href="signUp.html">👤 회원가입 (Sign Up)</a></li>
-            </ul>
-        </nav>
-
-        <hr>
-
-        <div class="content-wrapper">
-            <main>
-                <h2>📌 오늘의 주요 소식</h2>
-
-                <section>
-                    <h3>최근 공지 및 업데이트</h3>
-                    <article>
-                        <h4>[업데이트] 여행 앨범에 동영상 추가 완료!</h4>
-                        <p>훗카이도 대설산 단락 아래에 멋진 브이로그 영상을 추가했습니다. 이제 소리와 영상으로 여행을 추억할 수 있습니다.</p>
-                        <p>작성일: <time datetime="2026-06-11">2026년 6월 11일</time></p>
-                    </article>
-                </section>
-
-                <section>
-                    <h3>📸 이달의 베스트 컷</h3>
-                    <figure>
-                        <img src="../media/리장.jpg" width="300" height="150" alt="리장 호도협 풍경">
-                        <figcaption>중국 리장 호도협의 웅장한 협곡 모습 (2025년 촬영)</figcaption>
-                    </figure>
-                </section>
-            </main>
-
-            <aside>
-                <h2>🌤️ 실시간 정보</h2>
-                <p>현재 위치: 광주광역시 광산구 📍</p>
-                <section>
-                    <h3>🌤️ 실시간 세계 날씨</h3>
-                    <select id="city-select">
-                        <option value="none">도시를 선택하세요</option>
-                        <option value="37.56,126.97">대한민국 서울 🇰🇷</option>
-                        <option value="35.67,139.65">일본 도쿄 🇯🇵</option>
-                        <option value="48.85,2.35">프랑스 파리 🇫🇷</option>
-                    </select>
-                    <div id="weather-box">
-                        <p>도시를 선택하면 좌표가 표시됩니다.</p>
-                    </div>
-                </section>
-                <hr> 
-                <section class="game-area">
-                <h3>🎮 자바스크립트천국</h3>
-                <button class="btn-submit" onclick="startGame()">업다운 게임 🚀</button>
-                <button class="btn-submit" onclick="checkGrade()">성적 계산기 📊</button>
-                <button class="btn-submit" onclick="showMyBag()">내 가방 보기 🎒</button>
-                </section>
-            </aside>
+        <div class="link-list">
+            <a class="link-card" href="https://github.com/gyu2301/" target="_blank" rel="noopener noreferrer">
+                <span class="icon">💻</span>
+                <h3>나의 GitHub 연결</h3>
+            <a class="link-card" href="https://gyu2301.github.io/SKALA-Portfolio/" target="_blank" rel="noopener noreferrer">
+                <span class="icon">🎨</span>
+                <h3>나의 포트폴리오</h3>
+            </a>
         </div>
-        <hr>
-
-        <footer>
-            <p>이메일 문의: medit74@sk.com | 추천 학습 사이트: <a href="https://www.w3schools.com" target="_blank">W3Schools</a></p>
-            <p><small>© 2026 병호 포트폴리오. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</small></p>
-        </footer>
     </div>
-    <script src="../script/upDown.js"></script>
-    <script src="../script/grade.js"></script>
-    <script src="../script/bag.js"></script>  
-    <!-- script src="../script/weather.js"></script -->    
-    <script type="module" src="../script/realtimeInfo.js"></script>    
 </body>
-
 </html>
