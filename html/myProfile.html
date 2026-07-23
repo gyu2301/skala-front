@@ -3,47 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 프로필 페이지</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>My Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+            background: linear-gradient(160deg, #f7f5fb 0%, #ece6fb 50%, #e4d9f7 100%);
+            color: #3f3757;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            text-align: center;
+            padding: 36px 24px 8px;
+        }
+
+        .profile-header__eyebrow {
+            display: inline-block;
+            padding: 4px 14px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #8a6fd6;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(138, 111, 214, 0.15);
+        }
+
+        .profile-header__title {
+            margin: 0 0 14px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #4b3f72;
+        }
+
+        .profile-header__intro {
+            margin: 0 auto;
+            max-width: 520px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6d6288;
+        }
+
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 28px 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ece5fa;
+            border-radius: 18px;
+            padding: 28px 30px;
+            box-shadow: 0 10px 30px rgba(150, 120, 220, 0.08);
+        }
+
+        .card__title {
+            margin: 0 0 18px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #5b4d8a;
+        }
+
+        .card__list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .card__list--food li,
+        .card__list--todo li {
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            background: #f9f6ff;
+            color: #4b3f72;
+            font-size: 15px;
+        }
+
+        .card__list--food li:last-child,
+        .card__list--todo li:last-child {
+            margin-bottom: 0;
+        }
+
+        .card__list--todo {
+            counter-reset: todo;
+        }
+
+        .card__list--todo li {
+            position: relative;
+            padding-left: 44px;
+        }
+
+        .card__list--todo li::before {
+            counter-increment: todo;
+            content: counter(todo);
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #b6a3ea;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #f0eaf9;
+        }
+
+        .about-item:last-child {
+            border-bottom: none;
+        }
+
+        .about-item dt {
+            font-size: 15px;
+            font-weight: 700;
+            color: #6d4fc4;
+            margin-bottom: 6px;
+        }
+
+        .about-item dd {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #6d6288;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d8c9f5, transparent);
+        }
+
+        .profile-footer {
+            text-align: center;
+            padding: 12px 0 32px;
+            font-size: 13px;
+            color: #a496c7;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div class="page page--lavender">
 
-    <h1>👋 안녕하세요! 저를 소개합니다</h1>
-    <p>아래는 제가 좋아하는 것들과 올해의 계획, 그리고 저를 표현하는 단어들입니다.</p>
+        <header class="profile-header">
+            <p class="profile-header__eyebrow">과제 3 [나의 소개]</p>
+            <h1 class="profile-header__title">👤 안녕하세요! 최규원을 소개합니다</h1>
+            <p class="profile-header__intro">
+                이 페이지에는 제가 좋아하는 것들, 올해 제가 할 것들, <br>그리고 저를 표현하는 단어들이 담겨 있습니다.<br>
+                <br>저에 대해 더 알아 갈 수 있는 기회가 되길 바랍니다.
+            </p>
+        </header>
 
-    <!-- 1. 내가 좋아하는 음식 (순서 없는 리스트) -->
-    <h2>🍕 내가 좋아하는 음식</h2>
-    <ul>
-        <li>아이스 아메리카노 ☕</li>
-        <li>매콤한 떡볶이 🌶️</li>
-        <li>달콤한 초콜릿 케이크 🍰</li>
-    </ul>
+        <main class="profile-content">
 
-    <hr>
+            <section class="card card--food">
+                <h2 class="card__title">🍣 내가 좋아하는 음식</h2>
+                <ul class="card__list card__list--food">
+                    <li>초밥 🍱</li>
+                    <li>얼큰한 마라탕 🌶️</li>
+                    <li>새콤달달 양쯔간루 🥭</li>
+                </ul>
+            </section>
 
-    <!-- 2. 올 해 할 일 (순서 있는 리스트) -->
-    <h2>📅 올해 할 일</h2>
-    <ol>
-        <li>일주일에 책 한 권씩 읽기 📚</li>
-        <li>꾸준히 운동해서 체력 키우기 💪</li>
-        <li>새로운 프로그래밍 언어 배우기 💻</li>
-    </ol>
+            <div class="section-divider" role="separator"></div>
 
-    <hr>
+            <section class="card card--todo">
+                <h2 class="card__title">📋 올해 할 일</h2>
+                <ol class="card__list card__list--todo">
+                    <li>매일매일 SKALA에서 배운 내용 회고하기 🤓</li>
+                    <li>바른 자세로 라운드숄더 방지하기 👍</li>
+                    <li>AI 관련 지식 습득하기 👩‍💻</li>
+                </ol>
+            </section>
 
-    <!-- 3. 나를 설명하는 단어들 (정의형 목록) -->
-    <h2>✨ 나를 설명하는 단어들</h2>
-    <dl>
-        <dt>🏃‍♂️ 호기심</dt>
-        <dd>새로운 기술이나 흥미로운 트렌드를 보면 직접 경험해보고 배워야 직성이 풀립니다.</dd>
-        
-        <dt>☕ 꾸준함</dt>
-        <dd>매일 작은 계획이라도 세우고 그것을 지키기 위해 노력하는 성실함을 가지고 있습니다.</dd>
-        
-        <dt>🎨 크리에이티브</dt>
-        <dd>단순한 결과물보다는 사용자에게 더 나은 경험과 시각적인 즐거움을 주는 것을 좋아합니다.</dd>
-    </dl>
+            <div class="section-divider" role="separator"></div>
+
+            <section class="card card--about">
+                <h2 class="card__title">📝 나를 설명하는 단어들</h2>
+                <dl class="card__list card__list--about">
+                    <div class="about-item">
+                        <dt>🔥 도전정신</dt>
+                        <dd>새로운 도전을 두려워하지 않고, 성장할 수 있는 기회로 삼습니다.</dd>
+                    </div>
+                    <div class="about-item">
+                        <dt>✨ 성실성</dt>
+                        <dd>매일 작은 계획이라도 세우고 그것을 지키기 위해 노력하는 성실함을 가지고 있습니다.</dd>
+                    </div>
+                    <div class="about-item">
+                        <dt>🌈 융합형 인재</dt>
+                        <dd>본 전공인 국제학과 프로그래밍/AI 지식과 기술을 통합하여 새로운 가치를 창출하는 데 능숙합니다.</dd>
+                    </div>
+                </dl>
+            </section>
+
+        </main>
+
+        <footer class="profile-footer">
+            <p>Made with 💜(love) by 최규원</p>
+        </footer>
 
     </div>
 </body>
