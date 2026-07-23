@@ -3,37 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 여행 앨범</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>My Trip</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+            background: linear-gradient(160deg, #f7f5fb 0%, #ece6fb 50%, #e4d9f7 100%);
+            color: #3f3757;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            text-align: center;
+            padding: 36px 24px 8px;
+        }
+
+        .profile-header__eyebrow {
+            display: inline-block;
+            padding: 4px 14px;
+            margin-bottom: 12px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #8a6fd6;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(138, 111, 214, 0.15);
+        }
+
+        .profile-header__title {
+            margin: 0 0 14px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #4b3f72;
+        }
+
+        .profile-header__intro {
+            margin: 0 auto;
+            max-width: 520px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #6d6288;
+        }
+
+        .profile-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 28px 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ece5fa;
+            border-radius: 18px;
+            padding: 28px 30px;
+            box-shadow: 0 10px 30px rgba(150, 120, 220, 0.08);
+        }
+
+        .card__title {
+            margin: 0 0 18px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #5b4d8a;
+        }
+
+        .audio-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .audio-wrap audio {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .trip-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+        }
+
+        .trip-card {
+            width: 200px;
+            margin: 0;
+            padding: 10px;
+            border-radius: 14px;
+            background: #f9f6ff;
+            text-align: center;
+        }
+
+        .trip-card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .trip-card__caption {
+            margin: 10px 0 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #4b3f72;
+        }
+
+        .video-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .video-wrap video {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            box-shadow: 0 10px 24px rgba(150, 120, 220, 0.15);
+        }
+
+        .video-wrap p {
+            margin: 0;
+            font-size: 14px;
+            color: #6d6288;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d8c9f5, transparent);
+        }
+
+        .profile-footer {
+            text-align: center;
+            padding: 12px 0 32px;
+            font-size: 13px;
+            color: #a496c7;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🌍 나의 여행 앨범 🎵</h1>
-        <audio controls>
-        <source src="../media/music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <hr>
-    <div class="trip-grid-container">
-        <p class="trip-card">
-            <img src="../media/리장.jpg" width="400" height="200" alt="리장 호도협"><br>리장 호도협 (2025년)
-        </p>
-        <p class="trip-card">
-            <img src="../media/세부.jpg" width="400" height="200" alt="세부 탑스힐 "><br>세부 탑스힐 (2024년)
-        </p>
-        <p class="trip-card">
-            <img src="../media/홋카이도.jpg" width="400" height="200" alt="훗카이도 대설산"><br>훗카이도 대설산 (2025년)
-        </p>
-    </div>
-    <hr>
-    <h2>📹 나의 여행 브이로그</h2>
-    <p>
-        <video width="400" height="225" controls>
-            <source src="../media/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <br>리장의 아름다운 음악 ✈️
-    </p>
+    <div class="page">
+
+        <header class="profile-header">
+            <p class="profile-header__eyebrow">과제 6 [나의 여행지]</p>
+            <h1 class="profile-header__title">🌍 My Travel Log 🎵</h1>
+            <p class="profile-header__intro">
+                지금까지 다녀온 여행지의 사진과 영상, <br>그리고 여행하며 들었던 음악을 모아 봤습니다.<br>
+                <br>함께 여행의 기억을 둘러볼까요?
+            </p>
+        </header>
+
+        <main class="profile-content">
+
+            <section class="card card--audio">
+                <h2 class="card__title">🎵 여행 배경음악</h2>
+                <div class="audio-wrap">
+                    <audio controls>
+                        <source src="../media/music.mp3" type="audio/mpeg">
+                        브라우저가 audio 태그를 지원하지 않습니다.
+                    </audio>
+                </div>
+            </section>
+
+            <div class="section-divider" role="separator"></div>
+
+            <section class="card card--photos">
+                <h2 class="card__title">📸 다녀온 여행지</h2>
+                <div class="trip-grid">
+                    <p class="trip-card">
+                        <img src="../media/시드니.jpeg" alt="시드니 TV타워">
+                        <span class="trip-card__caption">시드니 TV타워 (2026년)</span>
+                    </p>
+                    <p class="trip-card">
+                        <img src="../media/파리.jpeg" alt="파리 에펠탑">
+                        <span class="trip-card__caption">파리 에펠탑 (2024년)</span>
+                    </p>
+                    <p class="trip-card">
+                        <img src="../media/후쿠오카.jpeg" alt="후쿠오카 온천마을">
+                        <span class="trip-card__caption">후쿠오카 온천마을 (2023년)</span>
+                    </p>
+                    <p class="trip-card">
+                        <img src="../media/리장.jpg" alt="리장 고성">
+                        <span class="trip-card__caption">리장 고성 (2022년)</span>
+                    </p>
+                    <p class="trip-card">
+                        <img src="../media/세부.jpg" alt="세부 해변">
+                        <span class="trip-card__caption">세부 해변 (2021년)</span>
+                    </p>
+                    <p class="trip-card">
+                        <img src="../media/홋카이도.jpg" alt="홋카이도 설경">
+                        <span class="trip-card__caption">홋카이도 설경 (2020년)</span>
+                    </p>
+                </div>
+            </section>
+
+            <div class="section-divider" role="separator"></div>
+
+            <section class="card card--video">
+                <h2 class="card__title">📹 나의 여행 브이로그</h2>
+                <div class="video-wrap">
+                    <video controls>
+                        <source src="../media/video.mp4" type="video/mp4">
+                        브라우저가 video 태그를 지원하지 않습니다.
+                    </video>
+                    <p>리장의 아름다운 순간 ✈️</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="profile-footer">
+            <p>Made with 💜(love) by 최규원</p>
+        </footer>
+
     </div>
 </body>
 </html>
